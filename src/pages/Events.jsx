@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import Navbar from "../components/Navbar"; // ← uses your existing Navbar
+import Navbar from "../components/Navbar";
 
 // ─── GLOBAL STYLES ────────────────────────────────────────────────────────────
 const GlobalStyles = () => (
@@ -16,6 +16,9 @@ const GlobalStyles = () => (
     @keyframes modalIn     { from{opacity:0;transform:scale(.96) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)} }
     @keyframes fadeIn      { from{opacity:0}to{opacity:1} }
     @keyframes pingAnim    { 75%,100%{transform:scale(2.1);opacity:0} }
+    @keyframes floatY      { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+    @keyframes rotateSlow  { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    @keyframes scanLine    { 0%{top:-2px} 100%{top:100%} }
 
     .ev-page { font-family: 'Manrope', system-ui, sans-serif; background: #050D1A; color: white; min-height: 100vh; }
     .shimmer-text { background: linear-gradient(90deg,#00EEFF 0%,#4F46E5 40%,#A78BFA 70%,#00EEFF 100%); background-size:200% auto; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:shimmer 4s linear infinite; }
@@ -54,6 +57,196 @@ const GlobalStyles = () => (
     .ev-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.05); }
     .ev-card-view-btn { padding: 7px 16px; border-radius: 9px; font-size: 12px; font-weight: 700; background: rgba(0,238,255,.08); border: 1px solid rgba(0,238,255,.2); color: #00EEFF; cursor: pointer; transition: background .2s, transform .2s; font-family: 'Manrope', sans-serif; }
     .ev-card-view-btn:hover { background: rgba(0,238,255,.15); transform: scale(1.04); }
+
+    /* ── GET INVOLVED SECTION ── */
+    .gi-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px 100px;
+    }
+    .gi-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .gi-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,238,255,.2);
+      background: rgba(0,238,255,.05);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      color: #00EEFF;
+      font-family: 'Space Mono', monospace;
+      margin-bottom: 16px;
+    }
+    .gi-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(26px,4vw,46px);
+      font-weight: 900;
+      color: white;
+      letter-spacing: -.03em;
+      line-height: 1.08;
+      margin-bottom: 12px;
+    }
+    .gi-subtitle {
+      color: #64748B;
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .gi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .gi-card {
+      position: relative;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.05);
+      background: #0A1628;
+      overflow: hidden;
+      transition: transform .4s cubic-bezier(.23,1,.32,1), border-color .4s, box-shadow .4s;
+    }
+    .gi-card:hover {
+      transform: translateY(-10px);
+    }
+    .gi-card-bar { height: 3px; width: 100%; }
+    .gi-scan {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .gi-card:hover .gi-scan { opacity: 1; animation: scanLine 3s linear infinite; }
+    .gi-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .5s;
+    }
+    .gi-card:hover .gi-glow { opacity: 1; }
+    .gi-icon-wrap {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 32px auto 0;
+    }
+    .gi-icon-ring {
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px dashed;
+      opacity: .3;
+      transition: opacity .3s;
+    }
+    .gi-card:hover .gi-icon-ring { opacity: .6; animation: rotateSlow 12s linear infinite; }
+    .gi-icon-inner {
+      width: 80px;
+      height: 80px;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      position: relative;
+      border: 1px solid;
+      transition: transform .35s;
+    }
+    .gi-card:hover .gi-icon-inner { transform: translateY(-4px) scale(1.05); animation: floatY 3s ease-in-out infinite; }
+    .gi-card-body {
+      padding: 20px 28px 28px;
+      text-align: center;
+    }
+    .gi-tag {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: .1em;
+      margin-bottom: 12px;
+      border: 1px solid;
+    }
+    .gi-card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: white;
+      letter-spacing: -.02em;
+      margin-bottom: 10px;
+    }
+    .gi-card-desc {
+      color: #64748B;
+      font-size: 13.5px;
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .gi-perks {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 28px;
+      text-align: left;
+    }
+    .gi-perk {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.05);
+      background: rgba(255,255,255,.02);
+      font-size: 13px;
+      color: #94A3B8;
+      transition: border-color .2s, background .2s, color .2s;
+    }
+    .gi-card:hover .gi-perk {
+      border-color: rgba(255,255,255,.07);
+      background: rgba(255,255,255,.03);
+    }
+    .gi-perk-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .gi-apply-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 24px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: transform .25s, box-shadow .25s, filter .25s;
+      font-family: 'Manrope', sans-serif;
+      letter-spacing: .01em;
+      text-decoration: none;
+    }
+    .gi-apply-btn:hover {
+      transform: scale(1.04);
+      filter: brightness(1.1);
+    }
+    .gi-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,238,255,.18), transparent);
+      max-width: 1200px;
+      margin: 0 auto 80px;
+    }
 
     /* ── EVENT DETAIL ── */
     .evd-header { padding: 84px 28px 0; max-width: 1200px; margin: 0 auto; }
@@ -160,9 +353,13 @@ const GlobalStyles = () => (
     .ev-footer-bottom { border-top: 1px solid rgba(255,255,255,.05); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 
     /* RESPONSIVE */
-    @media(max-width:1023px) { .evl-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:1023px) {
+      .evl-grid { grid-template-columns: repeat(2,1fr); }
+      .gi-grid { grid-template-columns: repeat(2,1fr); }
+    }
     @media(max-width:767px) {
       .evl-grid { grid-template-columns: 1fr; padding: 0 14px 60px; }
+      .gi-grid { grid-template-columns: 1fr; }
       .evd-form-row { grid-template-columns: 1fr; }
       .evd-people-grid { grid-template-columns: 1fr; }
       .evd-contact-grid { grid-template-columns: 1fr; }
@@ -172,6 +369,7 @@ const GlobalStyles = () => (
       .evl-filters { padding: 0 14px; }
       .evl-hero-top { align-items: flex-start; }
       .modal-body, .modal-header { padding-left: 18px; padding-right: 18px; }
+      .gi-section { padding: 0 14px 80px; }
     }
     @media(max-width:479px) {
       .evd-section { padding: 32px 14px 56px; }
@@ -206,6 +404,7 @@ const LocIcon      = () => <svg width="12" height="12" fill="none" viewBox="0 0 
 const UserIcon     = () => <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>;
 const UploadIcon   = () => <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>;
 const ArrowLeft    = () => <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} style={{flexShrink:0}}><path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5M12 5l-7 7 7 7"/></svg>;
+const ArrowRight   = () => <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>;
 
 // ─── INITIAL EVENTS DATA ──────────────────────────────────────────────────────
 const INITIAL_EVENTS = [
@@ -332,6 +531,184 @@ const INITIAL_EVENTS = [
     ],
   },
 ];
+
+// ─── GET INVOLVED CONFIG ──────────────────────────────────────────────────────
+// 👇 Replace these URLs with your actual form/application links
+const INVOLVEMENT_ROLES = [
+  {
+    id: "sponsor",
+    icon: "🤝",
+    tag: "SUPPORT US",
+    title: "Become a Sponsor",
+    desc: "Partner with TechEra to put your brand in front of thousands of passionate developers, designers, and builders at our events.",
+    accent: "#FEBC2E",
+    gradient: "linear-gradient(135deg,#FEBC2E,#F97316)",
+    bgGradient: "linear-gradient(135deg,rgba(254,188,46,.08),rgba(249,115,22,.05))",
+    applyLink: "https://your-sponsor-application-link.com", // 👈 Replace with your link
+    perks: [
+      "Brand visibility across all event materials",
+      "Dedicated booth / branding slot at events",
+      "Shoutout on all social channels (10K+ reach)",
+      "Direct access to top student talent",
+      "Co-branded content & recap features",
+    ],
+  },
+  {
+    id: "speaker",
+    icon: "🎤",
+    tag: "SHARE YOUR EXPERTISE",
+    title: "Apply as Speaker",
+    desc: "Got knowledge worth sharing? Take the stage at TechEra events and inspire the next generation of innovators across India.",
+    accent: "#A78BFA",
+    gradient: "linear-gradient(135deg,#A78BFA,#4F46E5)",
+    bgGradient: "linear-gradient(135deg,rgba(167,139,250,.08),rgba(79,70,229,.05))",
+    applyLink: "https://your-speaker-application-link.com", // 👈 Replace with your link
+    perks: [
+      "Speak at upcoming TechEra events",
+      "Featured speaker profile on our platforms",
+      "Network with 500–1000+ attendees per event",
+      "Content amplification on social media",
+      "Speaker certificate & recognition",
+    ],
+  },
+  {
+    id: "volunteer",
+    icon: "⚡",
+    tag: "JOIN THE CREW",
+    title: "Volunteer with Us",
+    desc: "Be part of the action behind the scenes. Volunteers are the heartbeat of every TechEra event — help us run the show.",
+    accent: "#00EEFF",
+    gradient: "linear-gradient(135deg,#00EEFF,#4F46E5)",
+    bgGradient: "linear-gradient(135deg,rgba(0,238,255,.08),rgba(79,70,229,.05))",
+    applyLink: "https://docs.google.com/forms/d/e/1FAIpQLSehz9Yy6i5WFw1O3tDYtEkb414jtoWGlf1FFKYlbZG_W8Useg/viewform", // 👈 Replace with your link
+    perks: [
+      "Hands-on event management experience",
+      "Exclusive volunteer merch & goodies",
+      "Certificate of volunteering",
+      "Network with speakers & organizers",
+      "Priority access to all future TechEra events",
+    ],
+  },
+];
+
+// ─── GET INVOLVED SECTION ─────────────────────────────────────────────────────
+function GetInvolved() {
+  return (
+    <>
+      <div className="gi-divider" />
+      <section className="gi-section">
+        {/* Section header */}
+        <div className="gi-header">
+          <div className="gi-eyebrow">
+            <span style={{ width:7, height:7, borderRadius:"50%", background:"#00EEFF",
+              display:"inline-block", animation:"pulseGlow 2s ease-in-out infinite" }} />
+            GET INVOLVED
+          </div>
+          <h2 className="gi-title">
+            Be part of something<br />
+            <span className="shimmer-text">bigger than a ticket</span>
+          </h2>
+          <p className="gi-subtitle">
+            Our events thrive because of sponsors, speakers, and volunteers.
+            Pick your role and help us build the future of tech communities in India.
+          </p>
+        </div>
+
+        {/* Three cards */}
+        <div className="gi-grid">
+          {INVOLVEMENT_ROLES.map((role, i) => (
+            <RoleCard key={role.id} role={role} index={i} />
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}
+
+function RoleCard({ role, index }) {
+  const [hov, setHov] = useState(false);
+
+  return (
+    <div
+      className="gi-card"
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+      style={{
+        borderColor: hov ? `${role.accent}35` : "rgba(255,255,255,.05)",
+        boxShadow: hov ? `0 24px 64px ${role.accent}14, 0 0 0 1px ${role.accent}20` : "none",
+        animationDelay: `${index * 0.08}s`,
+      }}
+    >
+      {/* Top gradient bar */}
+      <div className="gi-card-bar" style={{ background: role.gradient }} />
+
+      {/* Radial glow on hover */}
+      <div className="gi-glow"
+        style={{ background:`radial-gradient(ellipse at top, ${role.accent}0D, transparent 55%)` }} />
+
+      {/* Animated scan line */}
+      <div className="gi-scan" style={{ background:`linear-gradient(90deg,transparent,${role.accent}50,transparent)` }} />
+
+      {/* Background gradient tint */}
+      <div style={{ position:"absolute", inset:0, background:role.bgGradient,
+        opacity: hov ? 1 : 0, transition:"opacity .4s", pointerEvents:"none" }} />
+
+      {/* Icon */}
+      <div className="gi-icon-wrap">
+        <div className="gi-icon-ring" style={{ borderColor: role.accent }} />
+        <div className="gi-icon-inner"
+          style={{
+            background:`${role.accent}12`,
+            borderColor:`${role.accent}30`,
+            boxShadow: hov ? `0 0 24px ${role.accent}25` : "none",
+          }}>
+          {role.icon}
+        </div>
+      </div>
+
+      {/* Body */}
+      <div className="gi-card-body">
+        {/* Tag */}
+        <div className="gi-tag"
+          style={{ color:role.accent, borderColor:`${role.accent}30`, background:`${role.accent}10` }}>
+          {role.tag}
+        </div>
+
+        {/* Title */}
+        <div className="gi-card-title">{role.title}</div>
+
+        {/* Desc */}
+        <p className="gi-card-desc">{role.desc}</p>
+
+        {/* Perks */}
+        <div className="gi-perks">
+          {role.perks.map((perk, pi) => (
+            <div key={pi} className="gi-perk">
+              <div className="gi-perk-dot"
+                style={{ background:role.accent, boxShadow:`0 0 6px ${role.accent}70` }} />
+              {perk}
+            </div>
+          ))}
+        </div>
+
+        {/* Apply button — now an anchor tag that redirects to applyLink */}
+        <a
+          href={role.applyLink}
+          target="_blank"
+          rel="noreferrer"
+          className="gi-apply-btn"
+          style={{
+            background: role.gradient,
+            color: "#050D1A",
+            boxShadow: hov ? `0 0 32px ${role.accent}30` : "none",
+          }}
+        >
+          Apply Now <ArrowRight />
+        </a>
+      </div>
+    </div>
+  );
+}
 
 // ─── ANIMATED CANVAS COVER ────────────────────────────────────────────────────
 function AnimatedCover({ accentColor="#00EEFF", bannerUrl }) {
@@ -661,13 +1038,10 @@ function CreateEventModal({onClose, onSubmit}) {
             <button className="modal-close" onClick={onClose}>✕</button>
           </div>
         </div>
-
         <div className="modal-body">
           {step===1&&(
             <div style={{animation:"slideIn .28s ease-out both"}}>
               <p style={{color:"#64748B",fontSize:13,marginBottom:22}}>Step 1 — Basic info & banner</p>
-
-              {/* Banner upload */}
               <label className="evd-form-label" style={{marginBottom:8,display:"block"}}>Event Banner</label>
               <div className={`banner-upload-area${bannerPreview?" has-image":""}`} onClick={()=>fileRef.current?.click()}>
                 {bannerPreview
@@ -676,7 +1050,6 @@ function CreateEventModal({onClose, onSubmit}) {
                 }
                 <input ref={fileRef} type="file" accept="image/*" onChange={handleBanner} style={{display:"none"}} />
               </div>
-
               <div className="evd-form-row">
                 <div className="evd-form-group"><label className="evd-form-label">Event Name *</label><input className="evd-input" placeholder="TechEra Hackathon 2025" value={form.name} onChange={set("name")} /></div>
                 <div className="evd-form-group"><label className="evd-form-label">Organizer *</label><input className="evd-input" placeholder="TechEra Community" value={form.organizer} onChange={set("organizer")} /></div>
@@ -804,7 +1177,6 @@ function EventsListing({events, onViewEvent, onCreateEvent}) {
             <p className="evl-sub">Explore hackathons, summits, workshops, and more — curated for builders like you.</p>
           </div>
           <div style={{display:"flex",flexDirection:"column",gap:12,alignItems:"flex-end"}}>
-            {/* <button className="evl-create-btn" onClick={onCreateEvent}><PlusIcon /> Create Event</button> */}
             <div className="evl-search-wrap">
               <span className="evl-search-icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
               <input className="evl-search" placeholder="Search events…" value={search} onChange={e=>setSearch(e.target.value)} />
@@ -835,6 +1207,9 @@ function EventsListing({events, onViewEvent, onCreateEvent}) {
           :filtered.map(ev=><EventCard key={ev.id} ev={ev} onClick={()=>onViewEvent(ev)} />)
         }
       </div>
+
+      {/* ── Get Involved Section ── */}
+      <GetInvolved />
     </div>
   );
 }
@@ -865,7 +1240,7 @@ function Footer() {
           ))}
           <div>
             <div style={{fontSize:13,fontWeight:800,color:"white",marginBottom:14,textTransform:"uppercase",letterSpacing:".1em",fontFamily:"Space Mono,monospace"}}>Stay Updated</div>
-            {["📧 ravi@mentorravirautela.com","📞 +91 99100 99925","📍 Noida, Uttar Pradesh, India"].map(item=>(
+            {["📧 techera.com","📞 +91 99100 99925","📍 Hybrid, India"].map(item=>(
               <div key={item} style={{color:"#475569",fontSize:13,marginBottom:6}}>{item}</div>
             ))}
             <div style={{marginTop:14}}>
@@ -878,7 +1253,7 @@ function Footer() {
           </div>
         </div>
         <div className="ev-footer-bottom">
-          <span style={{color:"#475569",fontSize:12}}>© 2025 MentorRaviRautela. All rights reserved.</span>
+          <span style={{color:"#475569",fontSize:12}}>© 2025 TechEra Community. All rights reserved.</span>
           <div style={{display:"flex",gap:20}}>
             {["Terms of Service","Privacy Policy","Cookie Policy"].map(l=>(
               <a key={l} href="#" style={{color:"#475569",fontSize:12,textDecoration:"none",transition:"color .2s"}} onMouseEnter={e=>e.currentTarget.style.color="#94A3B8"} onMouseLeave={e=>e.currentTarget.style.color="#475569"}>{l}</a>
@@ -892,14 +1267,14 @@ function Footer() {
 
 // ─── ROOT ─────────────────────────────────────────────────────────────────────
 export default function EventsPage() {
-  const [events,setEvents]       = useState(INITIAL_EVENTS);
-  const [selected,setSelected]   = useState(null);
-  const [showCreate,setShowCreate]= useState(false);
+  const [events,setEvents]        = useState(INITIAL_EVENTS);
+  const [selected,setSelected]    = useState(null);
+  const [showCreate,setShowCreate] = useState(false);
 
   return (
     <div className="ev-page">
       <GlobalStyles />
-      <Navbar /> {/* Your existing Navbar — /events route is already in NAV_LINKS */}
+      <Navbar />
 
       {selected
         ? <EventDetail ev={selected} onBack={()=>{ setSelected(null); window.scrollTo(0,0); }} />

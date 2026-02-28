@@ -138,7 +138,8 @@ export default function Navbar() {
           {/* CTA + hamburger */}
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
             <a
-              href="#join"
+              href="https://chat.whatsapp.com/L5i3gkwI7gSErhUivmShMO"
+              target="_blink"
               style={{
                 display: "inline-flex",
                 alignItems: "center",

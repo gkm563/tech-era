@@ -461,7 +461,7 @@
                 {perks.map(p => <span key={p} className="perk-tag">✦ {p}</span>)}
               </div>
               <div className="cta-btns">
-                <a href="https://chat.whatsapp.com/L5i3gkwI7gSErhUivmShMO" className="cta-btn-p">Join the Community <ArrowRight /></a>
+                <a href="https://chat.whatsapp.com/L5i3gkwI7gSErhUivmShMO" className="cta-btn-p" target="_blink">Join the Community <ArrowRight /></a>
                 <a href="https://www.instagram.com/tech__eraa?igsh=ZTNlcXBobWZ0NG16" className="cta-btn-s"><InstaIcon /> Follow on Instagram</a>
               </div>
             </div>
@@ -480,8 +480,8 @@
         <Navbar />
         <main>
           <HeroSection />
-          <FoundersSection />
           <MissionSection />
+          <FoundersSection />
           <CTASection />
         </main>
         <Footer />

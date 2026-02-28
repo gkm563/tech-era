@@ -11,7 +11,7 @@ const managers = [
     initials: "MN",
     github: "https://github.com/Biswa5570",
     linkedin: "https://www.linkedin.com/in/bb-shark/",
-    instagram: "patronus_shark_2412",
+    instagram: "https://www.instagram.com/patronus_shark_2412",
     tag: "Community Manager",
     image: "/images/senior-coordinator-2.jpg",
     accent: "#00EEFF",
@@ -46,7 +46,7 @@ const departments = [
     members: [
       { id: "tm1", name: "Sudesh",        role: "Frontend Dev", initials: "SD", linkedin: "https://www.linkedin.com/in/sudesh-tanwar-a406a7338?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
       { id: "tm2", name: "Aditya Sharma", role: "DevOps",       initials: "AS", linkedin: "https://www.linkedin.com/in/aditya-sharma-8b2aa9244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-      { id: "tm3", name: "Rewa Gupta",    role: "Frontend Dev", initials: "RG", linkedin: "#" },
+      { id: "tm3", name: "Rewa Gupta",    role: "Frontend Dev", initials: "RG", linkedin: "https://www.linkedin.com/in/rewa-gupta-0303b232a?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
       { id: "tm4", name: "Shubham",       role: "Backend",      initials: "SH", linkedin: "https://www.linkedin.com/in/shubham-saini-630502379?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     ],
   },
@@ -60,7 +60,7 @@ const departments = [
       { id: "dm1", name: "Rahul",    role: "UI Designer",   initials: "RH", linkedin: "#" },
       { id: "dm2", name: "Ajit",     role: "Motion Design", initials: "AJ", linkedin: "#" },
       { id: "dm3", name: "Darshika", role: "Brand Design",  initials: "DK", linkedin: "#" },
-      { id: "dm4", name: "Ritu",     role: "UI Design",     initials: "RT", linkedin: "#" },
+      { id: "dm4", name: "Ritu",     role: "UI Design",     initials: "RT", linkedin: "https://www.linkedin.com/in/ritu-sarswat-78a69b2b1" },
     ],
   },
   {
@@ -68,23 +68,23 @@ const departments = [
     gradient: "linear-gradient(135deg,rgba(245,158,11,0.10),rgba(239,68,68,0.07))",
     description: "Orchestrating hackathons, workshops, and community meetups that bring members together.",
     lead:   { id: "e1", name: "Shambhavi Chaudhary", role: "Events Lead", initials: "SK", linkedin: "https://www.linkedin.com/in/shambhavi-chaudhary-5a891b307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: "#", skills: ["Event Mgmt", "Logistics", "Ops"], image: "/images/event-lead.jpg" },
-    coLead: { id: "e2", name: "Kritika Sharma",       role: "Co-Lead",    initials: "AS", linkedin: "#", github: "#", skills: ["Planning", "Marketing", "Budgeting"], image: "/images/event-colead.jpg" },
+    coLead: { id: "e2", name: "Kritika Sharma",       role: "Co-Lead",    initials: "AS", linkedin: "https://www.linkedin.com/in/kritika-sharma-124382313?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "#", skills: ["Planning", "Marketing", "Budgeting"], image: "/images/event-colead.jpg" },
     members: [
       { id: "em1", name: "Pushp Sharma",     role: "Logistics",      initials: "HT", linkedin: "https://www.linkedin.com/in/pushp-sharma-95b233376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { id: "em2", name: "Vansh Chaudhari",  role: "Outreach",       initials: "RP", linkedin: "https://www.linkedin.com/in/vansh-chaudhari9370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { id: "em7", name: "Gaurav Kumar",     role: "Event planning & scheduling",     initials: "S",  linkedin: "https://www.linkedin.com/in/gaurav-kumar-19a142342/" },
       { id: "em3", name: "Pragati Jain",     role: "Coordinator",    initials: "YM", linkedin: "https://www.linkedin.com/in/pragati-jain-7b3b62368?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { id: "em4", name: "Bhavya Jain",      role: "Volunteer Head", initials: "AK", linkedin: "https://www.linkedin.com/in/bhavya-jain-01b776341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-      { id: "em5", name: "Karthik Chilkori", role: "Outreach", initials: "KC", linkedin: "https://www.linkedin.com/in/kartik-chilkoti" },
       { id: "em6", name: "Sejal",            role: "Management",     initials: "S",  linkedin: "https://www.linkedin.com/in/sejal-baisla-63b6b639a?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+      { id: "em5", name: "Karthik Chilkoti", role: "Outreach", initials: "KC", linkedin: "https://www.linkedin.com/in/kartik-chilkoti" },
     ],
   },
   {
     id: "marketing", name: "Marketing & Social", icon: "📣", color: "#FB923C",
     gradient: "linear-gradient(135deg,rgba(251,146,60,0.10),rgba(245,158,11,0.07))",
     description: "Amplifying TechEra's voice across platforms, growing reach and community engagement.",
-    lead:   { id: "m1", name: "Parth Jain",    role: "Marketing Lead", initials: "ZQ", linkedin: "https://www.linkedin.com/in/parth-jain-529378347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: "#", skills: ["Content", "SEO", "Analytics"], image: "/images/marketing-lead.jpg" },
-    coLead: { id: "m2", name: "Saurya Kapoor", role: "Co-Lead",        initials: "NB", linkedin: "#", github: "#", skills: ["Social Media", "Ads", "Reels"] },
+    lead:   { id: "m1", name: "Parth Jain",    role: "Marketing Lead", initials: "ZQ", linkedin: "https://www.linkedin.com/in/parth-jain-529378347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: "#", skills: ["Content", "SEO", "Analytics"], image: "/images/Marketing-lead.jpeg" },
+    coLead: { id: "m2", name: "Saurya Kapoor", role: "Co-Lead",        initials: "NB", linkedin: "https://www.linkedin.com/in/saurya-kapoor?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: "#", skills: ["Social Media", "Ads", "Reels"], image: "/images/Marketing_colead.jpeg" },
     members: [
       { id: "mm1", name: "Ishaan V.", role: "Content Writer", initials: "IV", linkedin: "#" },
       { id: "mm2", name: "Prachi G.", role: "Instagram",      initials: "PG", linkedin: "#" },
@@ -145,14 +145,45 @@ const GLOBAL_CSS = `
   @keyframes te-float   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
   @keyframes te-glow    { 0%,100%{opacity:.45} 50%{opacity:1} }
   @keyframes te-scan    { 0%{top:-1px} 100%{top:100%} }
+  @keyframes te-fadeUp  { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ── Planet orbit: icon stays upright while revolving around center ── */
+  @keyframes te-orbit-planet {
+    from { transform: translate(-50%, -50%) rotate(0deg)   translateX(96px) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg) translateX(96px) rotate(-360deg); }
+  }
+
+  /* Small dot orbits (kept for decorative dots) */
   @keyframes te-orbit   { from{transform:rotate(0deg) translateX(90px) rotate(0deg)} to{transform:rotate(360deg) translateX(90px) rotate(-360deg)} }
   @keyframes te-orbitR  { from{transform:rotate(0deg) translateX(70px) rotate(0deg)} to{transform:rotate(-360deg) translateX(70px) rotate(360deg)} }
-  @keyframes te-fadeUp  { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
   .te-shimmer { background-size:200% auto; animation:te-shimmer 5s linear infinite; }
   .te-float   { animation:te-float 3.5s ease-in-out infinite; }
   .te-glow    { animation:te-glow 2s ease-in-out infinite; }
   .te-fadeUp  { animation:te-fadeUp .7s ease-out forwards; }
+
+  /* Planet icon: orbiting continuously, evenly spaced via negative delay */
+  .te-planet-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: rgba(10, 22, 40, 0.92);
+    border: 1px solid rgba(0, 238, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    animation: te-orbit-planet 14s linear infinite;
+    box-shadow: 0 0 12px rgba(0,238,255,0.08);
+  }
+  /* Each planet starts at a different point in the orbit via negative delay */
+  .te-planet-icon:nth-child(1) { animation-delay:    0s; }
+  .te-planet-icon:nth-child(2) { animation-delay: -3.5s; }
+  .te-planet-icon:nth-child(3) { animation-delay:  -7s;  }
+  .te-planet-icon:nth-child(4) { animation-delay: -10.5s;}
 
   .te-grid-bg {
     background-image:
@@ -326,8 +357,13 @@ const IGIcon  = () => <svg width="14" height="14" fill="currentColor" viewBox="0
 // ════════════════════════════════════════════════════════════
 
 function TeamHero() {
-  const totalMembers = departments.reduce((a, d) => a + 2 + d.members.length, 0);
+  const totalMembers =
+  managers.length +
+  seniorCoordinators.length +
+  departments.reduce((a, d) => a + 2 + d.members.length, 0);
+  
   const orbitIcons = departments.slice(0, 4).map((d) => d.icon);
+
   return (
     <section style={{ position:"relative", width:"100%", overflow:"hidden", background:"#050D1A" }}>
       <div className="te-grid-bg" style={{ position:"absolute", inset:0, pointerEvents:"none" }} />
@@ -363,31 +399,77 @@ function TeamHero() {
           </div>
         </div>
 
+        {/* ── Solar system ── */}
         <div className="te-hero-orbit" style={{ display:"flex", flexDirection:"column", alignItems:"center", flexShrink:0 }}>
-          <div style={{ position:"relative", width:230, height:230 }}>
-            <div style={{ position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", width:80, height:80, borderRadius:"50%", background:"rgba(0,238,255,0.12)", filter:"blur(22px)" }} />
-            <div style={{ position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", width:60, height:60, borderRadius:18, background:"linear-gradient(135deg,#00EEFF,#4F46E5)", display:"flex", alignItems:"center", justifyContent:"center" }}>
-              <span className="te-mono" style={{ color:"#050D1A", fontWeight:900, fontSize:16 }}>TE</span>
+          <div style={{ position:"relative", width:240, height:240 }}>
+
+            {/* Ambient glow behind logo */}
+            <div style={{ position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", width:90, height:90, borderRadius:"50%", background:"rgba(0,238,255,0.14)", filter:"blur(24px)", pointerEvents:"none" }} />
+
+            {/* ── Center logo (the "sun") ── */}
+            <div style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%,-50%)",
+              width: 100,
+              height: 100,
+              borderRadius: "50%",
+              overflow: "hidden",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 10,
+              boxShadow: "0 0 0 3px rgba(0,238,255,0.15), 0 0 30px rgba(0,238,255,0.12)",
+            }}>
+              <div style={{ position:"absolute", inset:0, borderRadius:"50%", background:"radial-gradient(circle,#00EEFF55,transparent 70%)", filter:"blur(15px)" }} />
+              <img
+                src="/images/logo.jpg"
+                alt="TechEra Logo"
+                style={{ position:"relative", width:"100%", height:"100%", objectFit:"cover", borderRadius:"50%" }}
+              />
             </div>
-            {[[0.78,0.11,"solid","rgba(0,238,255,0.10)"],[1.05,-0.025,"dashed","rgba(79,70,229,0.12)"],[1.32,-0.16,"solid","rgba(0,238,255,0.07)"]].map(([sc,off,st,cl],i)=>(
-              <div key={i} style={{ position:"absolute", width:`${sc*100}%`, height:`${sc*100}%`, top:`${off*100}%`, left:`${off*100}%`, borderRadius:"50%", border:`1px ${st} ${cl}` }} />
+
+            {/* ── Orbit rings ── */}
+            {[
+              [0.80, 0.10,  "solid",  "rgba(0,238,255,0.12)"],
+              [1.08, -0.04, "dashed", "rgba(79,70,229,0.15)"],
+              [1.36, -0.18, "solid",  "rgba(0,238,255,0.07)"],
+            ].map(([sc, off, st, cl], i) => (
+              <div key={i} style={{
+                position: "absolute",
+                width:  `${sc * 100}%`,
+                height: `${sc * 100}%`,
+                top:    `${off * 100}%`,
+                left:   `${off * 100}%`,
+                borderRadius: "50%",
+                border: `1px ${st} ${cl}`,
+                pointerEvents: "none",
+              }} />
             ))}
-            <div style={{ position:"absolute", top:"50%", left:"50%", marginLeft:-4, marginTop:-4, width:8, height:8, borderRadius:"50%", background:"#00EEFF", boxShadow:"0 0 8px #00EEFF", animation:"te-orbit 8s linear infinite" }} />
-            <div style={{ position:"absolute", top:"50%", left:"50%", marginLeft:-4, marginTop:-4, width:7, height:7, borderRadius:"50%", background:"#A78BFA", boxShadow:"0 0 8px #A78BFA", animation:"te-orbitR 12s linear infinite" }} />
-            {orbitIcons.map((icon,i)=>{
-              const angle=(i*90*Math.PI)/180, r=96;
-              return (
-                <div key={i} style={{ position:"absolute", top:"50%", left:"50%", width:36, height:36, borderRadius:11, background:"rgba(10,22,40,0.92)", border:"1px solid rgba(0,238,255,0.14)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:15, transform:`translate(-50%,-50%) translate(${Math.cos(angle)*r}px,${Math.sin(angle)*r}px)`, animation:`te-float ${3+i*.5}s ease-in-out infinite`, animationDelay:`${i*.4}s` }}>
-                  {icon}
-                </div>
-              );
-            })}
+
+            {/* ── Small decorative dots (original orbit dots kept) ── */}
+            <div style={{ position:"absolute", top:"50%", left:"50%", marginLeft:-4, marginTop:-4, width:8, height:8, borderRadius:"50%", background:"#00EEFF", boxShadow:"0 0 8px #00EEFF", animation:"te-orbit 8s linear infinite", zIndex:5 }} />
+            <div style={{ position:"absolute", top:"50%", left:"50%", marginLeft:-4, marginTop:-4, width:7, height:7, borderRadius:"50%", background:"#A78BFA", boxShadow:"0 0 8px #A78BFA", animation:"te-orbitR 12s linear infinite", zIndex:5 }} />
+
+            {/* ── Planet icons — evenly spaced via negative animation-delay ── */}
+            {orbitIcons.map((icon, i) => (
+              <div
+                key={i}
+                className="te-planet-icon"
+                style={{
+                  animationDelay: `${-i * (14 / orbitIcons.length)}s`,
+                  zIndex: 8,
+                }}
+              >
+                {icon}
+              </div>
+            ))}
           </div>
+
           <p className="te-mono" style={{ color:"#1E3A5F", fontSize:11, marginTop:22, letterSpacing:"0.14em" }}>// techera.departments</p>
         </div>
       </div>
-
-
     </section>
   );
 }
@@ -453,15 +535,11 @@ function ManagementSection() {
 
   return (
     <section style={{ position:"relative", padding:"clamp(56px,8vw,100px) 28px", background:"#050D1A", overflow:"hidden" }}>
-      {/* top divider */}
       <div style={{ position:"absolute", top:0, left:"50%", transform:"translateX(-50%)", width:"min(800px,90%)", height:1, background:"linear-gradient(90deg,transparent,rgba(0,238,255,.18),transparent)" }} />
-      {/* ambient blobs */}
       <div style={{ position:"absolute", top:60, right:0, width:"min(300px,40vw)", height:"min(300px,40vw)", borderRadius:"50%", background:"rgba(79,70,229,.07)", filter:"blur(90px)", pointerEvents:"none" }} />
       <div style={{ position:"absolute", bottom:40, left:0, width:"min(240px,35vw)", height:"min(240px,35vw)", borderRadius:"50%", background:"rgba(0,238,255,.05)", filter:"blur(70px)", pointerEvents:"none" }} />
 
       <div style={{ maxWidth:1200, margin:"0 auto", position:"relative" }}>
-
-        {/* ── Section heading ── */}
         <div style={{ textAlign:"center", marginBottom:"clamp(36px,5vw,56px)" }}>
           <div style={{ display:"inline-flex", alignItems:"center", gap:8, padding:"6px 16px", borderRadius:999, border:"1px solid rgba(79,70,229,.3)", background:"rgba(79,70,229,.1)", marginBottom:16 }}>
             <span className="te-mono" style={{ color:"#A78BFA", fontSize:11, fontWeight:700, letterSpacing:"0.2em" }}>LEADERSHIP</span>
@@ -477,43 +555,34 @@ function ManagementSection() {
           </p>
         </div>
 
-        {/* ── Side-by-side columns ── */}
         <div className="mgmt-combined-row">
-
-          {/* Left column — Managers */}
           {hasManagers && (
             <div className="mgmt-column">
-              {/* Column label */}
               <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:18 }}>
                 <div style={{ display:"inline-flex", alignItems:"center", gap:7, padding:"4px 12px", borderRadius:999, border:"1px solid rgba(0,238,255,.18)", background:"rgba(0,238,255,.05)", flexShrink:0 }}>
                   <span className="te-mono" style={{ color:"#00EEFF", fontSize:10, fontWeight:700, letterSpacing:"0.16em" }}>MANAGERS</span>
                 </div>
                 <div style={{ flex:1, height:1, background:"linear-gradient(90deg,rgba(0,238,255,.15),transparent)" }} />
               </div>
-              {/* Cards */}
               <div className="mgmt-column-cards">
                 {managers.map(m => <ManagementCard key={m.id} person={m} />)}
               </div>
             </div>
           )}
 
-          {/* Right column — Senior Coordinators */}
           {hasCoords && (
             <div className="mgmt-column">
-              {/* Column label */}
               <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:18 }}>
                 <div style={{ display:"inline-flex", alignItems:"center", gap:7, padding:"4px 12px", borderRadius:999, border:"1px solid rgba(52,211,153,.18)", background:"rgba(52,211,153,.05)", flexShrink:0 }}>
                   <span className="te-mono" style={{ color:"#34D399", fontSize:10, fontWeight:700, letterSpacing:"0.16em" }}>SR. COORDINATORS</span>
                 </div>
                 <div style={{ flex:1, height:1, background:"linear-gradient(90deg,rgba(52,211,153,.15),transparent)" }} />
               </div>
-              {/* Cards */}
               <div className="mgmt-column-cards">
                 {seniorCoordinators.map(sc => <ManagementCard key={sc.id} person={sc} />)}
               </div>
             </div>
           )}
-
         </div>
       </div>
     </section>
@@ -690,7 +759,7 @@ function TeamCTA() {
               <p style={{ color:"#64748B", fontSize:15, maxWidth:480, lineHeight:1.7, fontFamily:"'DM Sans',sans-serif" }}>We're always looking for passionate people. Pick a department, bring your skills, and help us build something meaningful.</p>
             </div>
             <div style={{ display:"flex", gap:12, flexWrap:"wrap", flexShrink:0 }}>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSehz9Yy6i5WFw1O3tDYtEkb414jtoWGlf1FFKYlbZG_W8Useg/viewform" className="te-btn">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSehz9Yy6i5WFw1O3tDYtEkb414jtoWGlf1FFKYlbZG_W8Useg/viewform" className="te-btn" target="_blink" >
                 Apply Now
                 <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
               </a>
