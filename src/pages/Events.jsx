@@ -318,7 +318,7 @@ const INITIAL_EVENTS = [
     ],
   },
   {
-    id:2, name:"TechEra Hackathon 2025", organizer:"TechEra Community",
+    id:2, name:"Upcoming Hackathon 2026", organizer:"TechEra Community",
     date:"TBA", day:"TBA", time:"TBA", fees:"Free", mode:"TBA",
     location:"TBA", attendees:"TBA", category:"Hackathon",
     status:"upcoming",
