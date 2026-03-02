@@ -640,7 +640,7 @@ function FAQContactTab({ev}) {
       </div>
       <div className="evd-contact-grid">
         <div className="evd-contact-info">
-          {[{icon:"📧",label:"Email",val:"ravi@mentorravirautela.com",accent:"#00EEFF"},{icon:"📞",label:"Phone",val:"+91 99100 99925",accent:"#A78BFA"},{icon:"📍",label:"Location",val:"Noida, Uttar Pradesh, India",accent:"#4F46E5"}].map(({icon,label,val,accent})=>(
+          {[{icon:"📧",label:"Email",val:"techera@gmail.com",accent:"#00EEFF"},{icon:"📞",label:"Phone",val:"+91 93105 26618",accent:"#A78BFA"},{icon:"📍",label:"Location",val:"Hybrid, India",accent:"#4F46E5"}].map(({icon,label,val,accent})=>(
             <div key={label} className="evd-contact-info-card" style={{display:"flex",alignItems:"center",gap:14}}>
               <div style={{width:44,height:44,borderRadius:13,background:`${accent}14`,border:`1px solid ${accent}30`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:18,flexShrink:0}}>{icon}</div>
               <div>
@@ -996,7 +996,7 @@ function Footer() {
           ))}
           <div>
             <div style={{fontSize:13,fontWeight:800,color:"white",marginBottom:14,textTransform:"uppercase",letterSpacing:".1em",fontFamily:"Space Mono,monospace"}}>Stay Updated</div>
-            {["📧 techera.com","📞 +91 99100 99925","📍 Hybrid, India"].map(item=>(
+            {["📧 techera@gmail.com","📞 +91 9310526618","📍 Hybrid, India"].map(item=>(
               <div key={item} style={{color:"#475569",fontSize:13,marginBottom:6}}>{item}</div>
             ))}
             <div style={{marginTop:14}}>

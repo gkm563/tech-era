@@ -67,8 +67,8 @@ const departments = [
     id: "events", name: "Events & Operations", icon: "🚀", color: "#F59E0B",
     gradient: "linear-gradient(135deg,rgba(245,158,11,0.10),rgba(239,68,68,0.07))",
     description: "Orchestrating hackathons, workshops, and community meetups that bring members together.",
-    lead:   { id: "e1", name: "Shambhavi Chaudhary", role: "Events Lead", initials: "SK", linkedin: "https://www.linkedin.com/in/shambhavi-chaudhary-5a891b307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: "#", skills: ["Event Mgmt", "Logistics", "Ops"], image: "/images/event-lead.jpg" },
-    coLead: { id: "e2", name: "Kritika Sharma",       role: "Co-Lead",    initials: "AS", linkedin: "https://www.linkedin.com/in/kritika-sharma-124382313?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "#", skills: ["Planning", "Marketing", "Budgeting"], image: "/images/event-colead.jpg" },
+    lead:   { id: "e1", name: "TBA", role: "Events Lead", initials: "SK", linkedin: "#", github: "#", skills: ["Event Mgmt", "Logistics", "Ops"], },
+    coLead: { id: "e2", name: "TBA",       role: "Co-Lead",    initials: "AS", linkedin: "#", github: "#", skills: ["Planning", "Marketing", "Budgeting"], },
     members: [
       { id: "em1", name: "Pushp Sharma",     role: "Logistics",      initials: "HT", linkedin: "https://www.linkedin.com/in/pushp-sharma-95b233376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
       { id: "em2", name: "Vansh Chaudhari",  role: "Outreach",       initials: "RP", linkedin: "https://www.linkedin.com/in/vansh-chaudhari9370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
