@@ -230,42 +230,39 @@ const SPECIAL_SPONSORS = [
     events: ["Dev Meetup 2026", "Hackathon 2025", "Workshop Series"],
     featured: false   // ✅ Now small card
   },
-
   {
     id: "digimation",
     name: "Digimation Flight",
     logo: "/logos/Digimation.jpeg",
-    tier: "Platinum",
+    tier: "UpSkilling",
     tierColor: "#00EEFF",
     tierBg: "rgba(0,238,255,.07)",
     tierBorder: "rgba(0,238,255,.25)",
     accent: "#00EEFF",
     gradient: "linear-gradient(135deg,#00EEFF,#06B6D4)",
-    tagline: "Fuelling developers and creators at TechEra events with quality food and hospitality that keeps the energy running all day.",
-    tags: ["Food Partner", "Hospitality"],
+    tagline: "Empowering the TechEra community with industry-relevant upskilling programs, hands-on training, and career acceleration opportunities.",
+    tags: ["Upskilling Partner", "Training", "Career Growth"],
     events: ["Dev Meetup 2026"],
-    featured: true,   // ✅ Now big featured card
+    featured: true,
 
-    // ✅ Added perks section like Tech4Hack had
     perks: [
-      {
-        icon: "🍕",
-        title: "Event Catering",
-        desc: "Provides high-quality meals and refreshments for all major TechEra offline events."
-      },
-      {
-        icon: "⚡",
-        title: "Energy Partner",
-        desc: "Keeps attendees fueled and engaged throughout hackathons and meetups."
-      },
-      {
-        icon: "🤝",
-        title: "Hospitality Support",
-        desc: "Ensures smooth hospitality management and premium attendee experience."
-      }
+        {
+        icon: "🎯",
+        title: "Industry-Focused Training",
+        desc: "Delivers practical, real-world skill development programs aligned with current tech industry demands."
+        },
+        {
+        icon: "📚",
+        title: "Hands-on Workshops",
+        desc: "Conducts interactive workshops and live sessions to enhance technical and professional skills."
+        },
+        {
+        icon: "🚀",
+        title: "Career Acceleration",
+        desc: "Supports learners with mentorship, guidance, and pathways to internships and job opportunities."
+        }
     ]
-  },
-
+    },
   {
     id: "edubuk",
     name: "Edubuk",
@@ -628,8 +625,8 @@ export default function SponsorsPage() {
               {[
                 { val: "2K+", label: "Community Members", cls: "" },
                 { val: "10+", label: "Partner Brands", cls: "gold" },
-                { val: "5+", label: "Events Hosted", cls: "purple" },
-                { val: "50+", label: "Expert Speakers", cls: "green" },
+                { val: "3+", label: "Events Hosted", cls: "purple" },
+                { val: "3+", label: "Expert Speakers", cls: "green" },
               ].map(({ val, label, cls }) => (
                 <div key={label} className="sp-stat-card">
                   <div className={`sp-stat-val ${cls}`}>{val}</div>

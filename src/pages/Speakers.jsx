@@ -1120,7 +1120,7 @@ export default function SpeakersPage() {
           </div>
           <div className="spk-hero-right">
             <div className="spk-hero-stats">
-              {[{val:"3+",label:"Expert Speakers",color:"#A78BFA"},{val:"400+",label:"Lives Impacted",color:"#00EEFF"},{val:"5+",label:"Events Powered",color:"#4ADE80"},{val:"48h",label:"Response Time",color:"#FEBC2E"}].map(({val,label,color})=>(
+              {[{val:"3+",label:"Expert Speakers",color:"#A78BFA"},{val:"200+",label:"Lives Impacted",color:"#00EEFF"},{val:"3+",label:"Events Powered",color:"#4ADE80"},{val:"8h",label:"Response Time",color:"#FEBC2E"}].map(({val,label,color})=>(
                 <div key={label} className="spk-stat-card">
                   <div className="spk-stat-val" style={{color}}>{val}</div>
                   <div className="spk-stat-label">{label}</div>
