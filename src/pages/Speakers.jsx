@@ -1031,7 +1031,7 @@ const BENEFITS = [
   { icon:"📣", color:"#00EEFF", bg:"rgba(0,238,255,.1)",   border:"rgba(0,238,255,.2)",   title:"10K+ Social Amplification",     desc:"Your talk is promoted across TechEra's Instagram, LinkedIn & newsletter — before, during, and after." },
   { icon:"🤝", color:"#4F46E5", bg:"rgba(79,70,229,.12)",  border:"rgba(79,70,229,.25)",  title:"Elite Backstage Networking",    desc:"Connect with speakers, sponsors, and community leaders building India's next generation of tech." },
   { icon:"🏆", color:"#FEBC2E", bg:"rgba(254,188,46,.1)",  border:"rgba(254,188,46,.2)",  title:"Official Speaker Certificate",  desc:"A recognized TechEra credential — add it to your LinkedIn, resume, and portfolio with pride." },
-  { icon:"🎁", color:"#4ADE80", bg:"rgba(74,222,128,.1)",  border:"rgba(74,222,128,.2)",  title:"Exclusive Speaker Perks",       desc:"Speaker merch, lifetime free event access, and priority invites to every future TechEra event." },
+  // { icon:"🎁", color:"#4ADE80", bg:"rgba(74,222,128,.1)",  border:"rgba(74,222,128,.2)",  title:"Exclusive Speaker Perks",       desc:"Speaker merch, lifetime free event access, and priority invites to every future TechEra event." },
   { icon:"🌍", color:"#F97316", bg:"rgba(249,115,22,.1)",  border:"rgba(249,115,22,.2)",  title:"Featured Community Profile",    desc:"Your profile lives on TechEra's website and is shared across our partner networks in India and beyond." },
 ];
 
