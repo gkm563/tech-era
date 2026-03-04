@@ -381,10 +381,10 @@ const SPEAKERS = [
 ];
 
 const TESTIMONIALS = [
-  { quote:"Speaking at TechEra was one of the most energizing experiences of my career. The audience was genuinely curious and asked the sharpest questions.", name:"Pragati Srivastava", role:"Ex-Amazon · Java Backend", initials:"PS", accent:"#00EEFF",
-    photo:"/images/pragati-srivastava.png" },
-  // { quote:"Empowering the next generation of developers by building communities, contributing to open source, and turning ideas into impactful innovations. ✨", name:"Bhawna Chauhan",   role:"Founder - SheBuilds",photo: "/images/Bhawna.png",   initials:"SM", accent:"#4ADE80" },
-  { quote:"Technology is not just about writing better code; it’s about solving real problems, empowering communities, and inspiring the next generation of developers to build, innovate, and create impact.",  name:"Gautam Kumar",      role:"Developer Advocate · Fetch.ai", photo: "/images/Gautam.png",          initials:"GK", accent:"#A78BFA" },
+  // { quote:"Speaking at TechEra was one of the most energizing experiences of my career. The audience was genuinely curious and asked the sharpest questions.", name:"Pragati Srivastava", role:"Ex-Amazon · Java Backend", initials:"PS", accent:"#00EEFF",
+  //   photo:"/images/pragati-srivastava.png" },
+  // // { quote:"Empowering the next generation of developers by building communities, contributing to open source, and turning ideas into impactful innovations. ✨", name:"Bhawna Chauhan",   role:"Founder - SheBuilds",photo: "/images/Bhawna.png",   initials:"SM", accent:"#4ADE80" },
+  // { quote:"Technology is not just about writing better code; it’s about solving real problems, empowering communities, and inspiring the next generation of developers to build, innovate, and create impact.",  name:"Gautam Kumar",      role:"Developer Advocate · Fetch.ai", photo: "/images/Gautam.png",          initials:"GK", accent:"#A78BFA" },
 ];
 
 const BENEFITS = [
