@@ -59,7 +59,6 @@ const GlobalStyles = () => (
     .ev-card-view-btn { padding: 7px 16px; border-radius: 9px; font-size: 12px; font-weight: 700; background: rgba(0,238,255,.08); border: 1px solid rgba(0,238,255,.2); color: #00EEFF; cursor: pointer; transition: background .2s, transform .2s; font-family: 'Manrope', sans-serif; }
     .ev-card-view-btn:hover { background: rgba(0,238,255,.15); transform: scale(1.04); }
 
-    /* ── COLLAB BANNER ── */
     .ev-collab-banner { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; }
     .ev-collab-banner-title { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 900; color: white; letter-spacing: -.02em; text-align: center; position: relative; z-index: 2; line-height: 1.2; padding: 0 12px; }
     .ev-collab-banner-badge { position: relative; z-index: 2; margin-top: 10px; padding: 4px 14px; border-radius: 999px; font-size: 10px; font-weight: 700; font-family: 'Space Mono', monospace; letter-spacing: .12em; border: 1px solid; }
@@ -96,7 +95,6 @@ const GlobalStyles = () => (
     .gi-apply-btn:hover { transform: scale(1.04); filter: brightness(1.1); }
     .gi-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,238,255,.18), transparent); max-width: 1200px; margin: 0 auto 80px; }
 
-    /* ── EVENT DETAIL ── */
     .evd-header { padding: 84px 28px 0; max-width: 1200px; margin: 0 auto; }
     .evd-back-btn { display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); color: #64748B; font-size: 13px; font-weight: 600; cursor: pointer; transition: color .2s, border-color .2s; margin-bottom: 24px; font-family: 'Manrope', sans-serif; }
     .evd-back-btn:hover { color: #00EEFF; border-color: rgba(0,238,255,.25); }
@@ -180,7 +178,6 @@ const GlobalStyles = () => (
     .evd-contact-info { display: flex; flex-direction: column; gap: 16px; }
     .evd-contact-info-card { padding: 18px 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,.06); background: #0A1628; }
 
-    /* ── REGISTRATION BANNER ── */
     .evd-register-banner { max-width: 1200px; margin: 0 auto 60px; padding: 0 28px; animation: slideIn .4s ease-out both; }
     .evd-register-inner { position: relative; border-radius: 24px; overflow: hidden; padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; border: 1px solid rgba(0,238,255,.2); background: linear-gradient(135deg, rgba(0,238,255,.06) 0%, rgba(79,70,229,.08) 50%, rgba(167,139,250,.05) 100%); }
     .evd-register-glow { position: absolute; top: -40px; left: -40px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(0,238,255,.18), transparent 70%); pointer-events: none; }
@@ -191,7 +188,6 @@ const GlobalStyles = () => (
     .evd-register-btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 36px; border-radius: 16px; font-weight: 800; font-size: 16px; color: #050D1A; background: linear-gradient(135deg, #00EEFF, #4F46E5); border: none; cursor: pointer; text-decoration: none; transition: transform .25s, box-shadow .25s, filter .25s; font-family: 'Manrope', sans-serif; white-space: nowrap; flex-shrink: 0; }
     .evd-register-btn:hover { transform: scale(1.06); box-shadow: 0 0 48px rgba(0,238,255,.4); filter: brightness(1.08); }
 
-    /* ── CREATE MODAL ── */
     .modal-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(5,13,26,.9); backdrop-filter: blur(14px); display: flex; align-items: center; justify-content: center; padding: 20px; animation: fadeIn .22s ease-out; }
     .modal-box { background: #0A1628; border: 1px solid rgba(255,255,255,.08); border-radius: 28px; width: 100%; max-width: 720px; max-height: 90vh; overflow-y: auto; animation: modalIn .32s cubic-bezier(.23,1,.32,1); scrollbar-width: thin; scrollbar-color: rgba(0,238,255,.2) transparent; }
     .modal-box::-webkit-scrollbar { width: 4px; }
@@ -314,19 +310,14 @@ function CollabBanner({ ev }) {
   return (
     <div style={{width:"100%",height:"100%",position:"relative",overflow:"hidden",background:ev.bannerGradient}}>
       <canvas ref={canvasRef} style={{position:"absolute",inset:0,width:"100%",height:"100%",pointerEvents:"none"}} />
-      {/* Glow orb */}
       <div style={{position:"absolute",top:"10%",left:"50%",transform:"translateX(-50%)",width:"60%",height:"70%",borderRadius:"50%",background:`radial-gradient(ellipse, ${acc}18, transparent 70%)`,pointerEvents:"none"}} />
-      {/* Content */}
       <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,padding:"0 16px",zIndex:2}}>
-        {/* Collab badge */}
         <div style={{padding:"3px 12px",borderRadius:999,border:`1px solid ${acc}50`,background:`${acc}18`,fontSize:10,fontWeight:700,fontFamily:"Space Mono,monospace",color:acc,letterSpacing:".15em",marginBottom:2}}>
           🤝 COMMUNITY PARTNER
         </div>
-        {/* Event name */}
         <div style={{fontFamily:"Syne,sans-serif",fontSize:20,fontWeight:900,color:"white",textAlign:"center",lineHeight:1.2,letterSpacing:"-.02em",textShadow:`0 0 24px ${acc}50`}}>
           {ev.name}
         </div>
-        {/* Powered by row */}
         {partners.length > 0 && (
           <div style={{display:"flex",alignItems:"center",gap:6,marginTop:4,flexWrap:"wrap",justifyContent:"center"}}>
             <span style={{fontSize:10,color:"rgba(255,255,255,.4)",fontFamily:"Space Mono,monospace"}}>powered by</span>
@@ -337,7 +328,6 @@ function CollabBanner({ ev }) {
             ))}
           </div>
         )}
-        {/* Date + location row */}
         <div style={{display:"flex",alignItems:"center",gap:10,marginTop:6,flexWrap:"wrap",justifyContent:"center"}}>
           <span style={{fontSize:11,color:"rgba(255,255,255,.55)",display:"flex",alignItems:"center",gap:4}}>
             📅 {ev.date}
@@ -396,32 +386,34 @@ const INITIAL_EVENTS = [
       { time: "03:22 PM – 03:30 PM", title: "Closing With Some Group Pictures", type: "closing" },
     ],
     organiserTeam:[
-      {name:"Aditya ",  tagline:"Founder",       initials:"AM",accent:"#00EEFF"},
-      {name:"Arnav", tagline:"Co-Founder",      initials:"PS",accent:"#A78BFA"},
-      {name:"Amrita",  tagline:"Co-Founder", initials:"RV",accent:"#4F46E5"},
-      {name:"Biswa",  tagline:"Community Manager", initials:"SG",accent:"#06B6D4"},
-      {name:"Raj",  tagline:"Senior Coordinator", initials:"SG",accent:"#b4e166"},
-      {name:"Gourav",  tagline:"Technical Team", initials:"SG",accent:"#65b4c2"},
-      {name:"Kaashvi",  tagline:"Video Editing", initials:"SG",accent:"#2d5cba"},
-      {name:"Parth and Shaurya",  tagline:"Marketing and PR", initials:"SG",accent:"#30c274"},
-      {name:"Harsh and Abhijna",  tagline:"Design Team", initials:"SG",accent:"#7e4cc9"},
-      // {name:"Shambhavi and Kritika",  tagline:"Event Management Team", initials:"SG",accent:"#d153a9"},
-      {name:"Raja",  tagline:"Content Team", initials:"SG",accent:"#d153a9"},
+      {name:"Aditya",   tagline:"Founder",              initials:"A", accent:"#00EEFF", linkedin:"https://www.linkedin.com/in/aditya-c-366b90305/"},
+      {name:"Arnav",    tagline:"Co-Founder",            initials:"A", accent:"#A78BFA", linkedin:"https://www.linkedin.com/in/arnav-raj-18983a33a"},
+      {name:"Amrita",   tagline:"Co-Founder",            initials:"A", accent:"#4F46E5", linkedin:"https://www.linkedin.com/in/amrita-singh-579262331/?utm_source=share_via&utm_content=profile&utm_medium=member_android"},
+      {name:"Biswa",    tagline:"Community Manager",     initials:"BM", accent:"#06B6D4", linkedin:"https://www.linkedin.com/in/bb-shark/"},
+      {name:"Raj",      tagline:"Senior Coordinator",    initials:"RJ", accent:"#b4e166", linkedin:"https://www.linkedin.com/in/raj-mishra-030b04327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
+      {name:"Gourav",   tagline:"Technical Team",        initials:"G", accent:"#65b4c2", linkedin:"https://www.linkedin.com/in/gourav-jaat/"},
+      {name:"Kaashvi",  tagline:"Video Editing",         initials:"KV", accent:"#2d5cba", linkedin:"https://www.linkedin.com/in/kaashvi-gupta?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
+      {name:"Parth and Shaurya", tagline:"Marketing and PR", initials:"PS", accent:"#30c274", linkedin:"https://www.linkedin.com/in/parth-jain-529378347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
+      {name:"Harsh and Abhijna", tagline:"Design Team",  initials:"HA", accent:"#7e4cc9", linkedin:"https://www.linkedin.com/in/harsh-sharma-786779334?utm_source=share_via&utm_content=profile&utm_medium=member_android"},
+      {name:"Raja",     tagline:"Content Team",          initials:"RJ", accent:"#d153a9", linkedin:"https://www.linkedin.com/in/raja-polamarasetti?fromQR=1"},
     ],
-    speakers:[{name:"Pragati Srivastava",tagline:"Java Backend Developer, Ex-Amazon",initials:"AR",accent:"#00EEFF"}],
+    speakers:[
+      {name:"Pragati Srivastava",tagline:"Java Backend Developer, Ex-Amazon",initials:"PS",accent:"#00EEFF",linkedin:"https://www.linkedin.com/in/pragatisri/"},
+      {name:"Bhawna Chauhan",tagline:"",initials:"BC",accent:"#00EEFF",linkedin:"https://www.linkedin.com/in/connectbhawna?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"}
+    ],
     sponsors:[
-      {name:"Tech4Hack",tagline:"Venue Partner",initials:"TC",accent:"#FEBC2E"},
-      {name:"Edubuk",tagline:"Job and knowledge Partner",initials:"CB",accent:"#94A3B8"},
-      {name:"OSEN ",tagline:"Goodies Partner",initials:"DS",accent:"#00EEFF"},
-      {name:"Digimation Flight",tagline:"Food Partner",initials:"IV",accent:"#A78BFA"},
-      {name:"Ops-skill",tagline:"Innovation Partner",initials:"IV",accent:"#bae7bd"},
-      {name:"MetaSpace",tagline:"Goodies Partner",initials:"IV",accent:"#cce883"},
+      {name:"Tech4Hack",       tagline:"Venue Partner",      initials:"TH", accent:"#FEBC2E", linkedin:"https://www.linkedin.com/company/tech4hack/"},
+      {name:"Edubuk",          tagline:"Job and knowledge Partner", initials:"EB", accent:"#94A3B8", linkedin:"https://www.linkedin.com/company/edubuk-ai-web3/"},
+      {name:"OSEN",            tagline:"Goodies Partner",    initials:"OS", accent:"#00EEFF", linkedin:"https://www.linkedin.com/company/osenofficial/"},
+      {name:"Digimation Flight",tagline:"Food Partner",      initials:"DF", accent:"#A78BFA", linkedin:"https://www.linkedin.com/company/digimationflight/"},
+      {name:"Ops-skill",       tagline:"Innovation Partner", initials:"OK", accent:"#bae7bd", linkedin:"#"},
+      {name:"MetaSpace",       tagline:"Goodies Partner",    initials:"MS", accent:"#cce883", linkedin:"https://www.linkedin.com/company/metaspace-verse/"},
     ],
     communityPartners:[
-      {name:"Tech4Hack",tagline:"Open Source Community",initials:"GN",accent:"#4F46E5"},
-      {name:"Cracked",tagline:"Open Source Community",initials:"ML",accent:"#00EEFF"},
-      {name:"Idevion",tagline:"Open Source Community",initials:"HC",accent:"#A78BFA"},
-      {name:"Hackfinity",tagline:"Open Source Community",initials:"OF",accent:"#06B6D4"},
+      {name:"Tech4Hack",  tagline:"Open Source Community", initials:"TH", accent:"#4F46E5", linkedin:"https://www.linkedin.com/company/tech4hack/"},
+      {name:"Cracked",    tagline:"Open Source Community", initials:"CK", accent:"#00EEFF", linkedin:"https://www.linkedin.com/company/crackedcommunity/"},
+      {name:"Idevion",    tagline:"Open Source Community", initials:"I", accent:"#A78BFA", linkedin:"https://www.linkedin.com/company/idevion/"},
+      {name:"Hackfinity", tagline:"Open Source Community", initials:"HF", accent:"#06B6D4", linkedin:"https://www.linkedin.com/company/hacknfinity/"},
     ],
     faqs:[
       {q:"Is this event free to attend?",a:"Yes! Completely free for all registered attendees. Just sign up and show up."},
@@ -443,11 +435,11 @@ const INITIAL_EVENTS = [
     links:{website:"#",linkedin:"#",instagram:"#"},
     agenda:[],
     organiserTeam:[
-      {name:"Aditya ",  tagline:"Founder",       initials:"AM",accent:"#00EEFF"},
-      {name:"Arnav", tagline:"Co-Founder",      initials:"PS",accent:"#A78BFA"},
-      {name:"Amrita",  tagline:"Co-Founder", initials:"RV",accent:"#4F46E5"},
-      {name:"Biswa",  tagline:"Community Manager", initials:"SG",accent:"#06B6D4"},
-      {name:"Raj",  tagline:"Senior Coordinator", initials:"SG",accent:"#b4e166"},
+      {name:"Aditya",  tagline:"Founder",           initials:"AM", accent:"#00EEFF", linkedin:"https://www.linkedin.com/in/aditya-c-366b90305"},
+      {name:"Arnav",   tagline:"Co-Founder",         initials:"PS", accent:"#A78BFA", linkedin:"https://www.linkedin.com/in/arnav-raj-18983a33a"},
+      {name:"Amrita",  tagline:"Co-Founder",         initials:"RV", accent:"#4F46E5", linkedin:"https://www.linkedin.com/in/amrita-singh-579262331/?utm_source=share_via&utm_content=profile&utm_medium=member_android"},
+      {name:"Biswa",   tagline:"Community Manager",  initials:"BS", accent:"#06B6D4", linkedin:"https://www.linkedin.com/in/bb-shark/"},
+      {name:"Raj",     tagline:"Senior Coordinator", initials:"RM", accent:"#b4e166", linkedin:"https://www.linkedin.com/in/raj-mishra-030b04327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
     ],
     speakers:[],sponsors:[],communityPartners:[],
     faqs:[
@@ -473,17 +465,17 @@ const INITIAL_EVENTS = [
       { time: "01:20 PM – 01:30 PM", title: "Surprise Giveaway & Closing Note", type: "closing" },
     ],
     organiserTeam:[
-      {name:"Aditya ",  tagline:"Founder",       initials:"AM",accent:"#00EEFF"},
-      {name:"Arnav", tagline:"Co-Founder",      initials:"PS",accent:"#A78BFA"},
-      {name:"Amrita",  tagline:"Co-Founder", initials:"RV",accent:"#4F46E5"},
-      {name:"Biswa",  tagline:"Community Manager", initials:"SG",accent:"#06B6D4"},
-      {name:"Raj",  tagline:"Senior Coordinator", initials:"SG",accent:"#b4e166"},
+      {name:"Aditya",  tagline:"Founder",           initials:"AM", accent:"#00EEFF", linkedin:"https://www.linkedin.com/in/aditya-c-366b90305"},
+      {name:"Arnav",   tagline:"Co-Founder",         initials:"PS", accent:"#A78BFA", linkedin:"https://www.linkedin.com/in/arnav-raj-18983a33a"},
+      {name:"Amrita",  tagline:"Co-Founder",         initials:"RV", accent:"#4F46E5", linkedin:"https://www.linkedin.com/in/amrita-singh-579262331/?utm_source=share_via&utm_content=profile&utm_medium=member_android"},
+      {name:"Biswa",   tagline:"Community Manager",  initials:"BS", accent:"#06B6D4", linkedin:"https://www.linkedin.com/in/bb-shark/"},
+      {name:"Raj",     tagline:"Senior Coordinator", initials:"RM", accent:"#b4e166", linkedin:"https://www.linkedin.com/in/raj-mishra-030b04327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"},
     ],
     speakers:[
-      {name:"Shivani Mehrotra",tagline:"Co-Founder and COO of Edubuk",initials:"SM",accent:"#4ADE80"},
-      {name:"Apoorva Bajaj",tagline:"Co-Founder and CEO of Edubuk",initials:"AB",accent:"#00EEFF"},
+      {name:"Shivani Mehrotra", tagline:"Co-Founder and COO of Edubuk", initials:"SM", accent:"#4ADE80", linkedin:"#"},
+      {name:"Apoorva Bajaj",    tagline:"Co-Founder and CEO of Edubuk", initials:"AB", accent:"#00EEFF", linkedin:"#"},
     ],
-    sponsors:[{name:"EDUBUK",tagline:"Event Sponser",initials:"OA",accent:"#4ADE80"}],
+    sponsors:[{name:"EDUBUK",tagline:"Event Sponser",initials:"OA",accent:"#4ADE80",linkedin:"#"}],
     communityPartners:[],
     faqs:[
       {q:"How do I get the meeting link?",a:"You'll receive it via email after registration."},
@@ -514,11 +506,11 @@ const INITIAL_EVENTS = [
     organiserTeam:[],
     speakers:[],
     sponsors:[
-      {name:"CracKed",  tagline:"Powered By",      initials:"CK", accent:"#A78BFA"},
-      {name:"HERMEiAS", tagline:"Powered By",      initials:"HM", accent:"#4F46E5"},
+      {name:"CracKed",  tagline:"Powered By", initials:"CK", accent:"#A78BFA", linkedin:"#"},
+      {name:"HERMEiAS", tagline:"Powered By", initials:"HM", accent:"#4F46E5", linkedin:"#"},
     ],
     communityPartners:[
-      {name:"TechEra",  tagline:"Community Partner", initials:"TE", accent:"#00EEFF"},
+      {name:"TechEra",  tagline:"Community Partner", initials:"TE", accent:"#00EEFF", linkedin:"#"},
     ],
     faqs:[
       {q:"What was LockedIn about?",a:"LockedIn was an evening community event for builders, coders, and creators to showcase their work, share ideas, and network over food and great energy."},
@@ -548,10 +540,10 @@ const INITIAL_EVENTS = [
     organiserTeam:[],
     speakers:[],
     sponsors:[
-      {name:"ACE", tagline:"Organized By", initials:"AC", accent:"#4ADE80"},
+      {name:"ACE", tagline:"Organized By", initials:"AC", accent:"#4ADE80", linkedin:"#"},
     ],
     communityPartners:[
-      {name:"TechEra", tagline:"Community Partner", initials:"TE", accent:"#00EEFF"},
+      {name:"TechEra", tagline:"Community Partner", initials:"TE", accent:"#00EEFF", linkedin:"#"},
     ],
     faqs:[
       {q:"What is Technical Day 5.0?",a:"Technical Day 5.0 is the flagship annual tech fest organized by ACE (Association of Computer Enthusiasts) at VIPS campus, New Delhi, featuring competitions, workshops, and speaker sessions."},
@@ -567,8 +559,8 @@ const INITIAL_EVENTS = [
     description:"PromptHeist is a prompt engineering challenge designed to uncover the smartest minds who can bend AI to their will.\n\nIn this high-stakes competition, participants enter the world of AI prompt strategy, creativity, and manipulation — where the mission is simple: outsmart the machine before others do.\n\nTechEra was proud to be the Community Partner for this one-of-a-kind AI challenge by Neuroplex.",
     links:{website:"#",linkedin:"#",instagram:"#"},
     agenda:[], organiserTeam:[], speakers:[],
-    sponsors:[{name:"Neuroplex",tagline:"Organized By",initials:"NP",accent:"#F97316"}],
-    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF"}],
+    sponsors:[{name:"Neuroplex",tagline:"Organized By",initials:"NP",accent:"#F97316",linkedin:"#"}],
+    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF",linkedin:"#"}],
     faqs:[
       {q:"What was PROMTHEIST?",a:"PromptHeist is a prompt engineering challenge where participants compete to outsmart AI using creative and strategic prompting techniques."},
       {q:"What was TechEra's role?",a:"TechEra served as the official Community Partner for PROMTHEIST by Neuroplex."},
@@ -583,8 +575,8 @@ const INITIAL_EVENTS = [
     description:"TechEra is thrilled to collaborate with CodeGeeks, the coding society of GTB4CEC, as Community Partners for CodeZen — the national-level hackathon where creators, coders, and innovators unite to build the extraordinary.\n\nThis edition comes with a Stranger Things-inspired theme, bringing a spooky, electrifying atmosphere that will push your creativity beyond the ordinary.",
     links:{website:"#",linkedin:"#",instagram:"#"},
     agenda:[], organiserTeam:[], speakers:[],
-    sponsors:[{name:"CodeGeeks",tagline:"Organized By",initials:"CG",accent:"#EC4899"}],
-    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF"}],
+    sponsors:[{name:"CodeGeeks",tagline:"Organized By",initials:"CG",accent:"#EC4899",linkedin:"#"}],
+    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF",linkedin:"#"}],
     faqs:[
       {q:"What is CodeZen 2?",a:"CodeZen 2 is a national-level hackathon organized by CodeGeeks (GTB4CEC) with a Stranger Things-inspired theme."},
       {q:"What was TechEra's role?",a:"TechEra participated as the official Community Partner for CodeZen 2."},
@@ -599,11 +591,123 @@ const INITIAL_EVENTS = [
     description:"What started as a hackathon quickly turned into an exciting day full of ideas, teamwork, learning, and fun.\n\nDuality AI Hackathon, organized by Genesis, delivered a great overall experience — engaging, well-managed, and genuinely enjoyable from start to finish.\n\nTechEra was honored to be the Community Partner for this fantastic event in Gurugram.",
     links:{website:"#",linkedin:"#",instagram:"#"},
     agenda:[], organiserTeam:[], speakers:[],
-    sponsors:[{name:"Genesis",tagline:"Organized By",initials:"GN",accent:"#06B6D4"}],
-    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF"}],
+    sponsors:[{name:"Genesis",tagline:"Organized By",initials:"GN",accent:"#06B6D4",linkedin:"#"}],
+    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF",linkedin:"#"}],
     faqs:[
       {q:"What was Duality Hackathon: Genesis?",a:"An AI-focused hackathon organized by Genesis in Gurugram — a full day of ideas, teamwork, and innovation."},
       {q:"What was TechEra's role?",a:"TechEra was the official Community Partner for Duality Hackathon: Genesis."},
+    ],
+  },
+  {
+    id:9, name:"Hyperspace Innovation Hackathon", organizer:"TechNest",
+    date:"7–8 February 2026", day:"Saturday & Sunday", time:"All Day", mode:"Offline",
+    location:"IPEC, Ghaziabad", attendees:"TBA", category:"Collaborations",
+    status:"expired", registerLink:"#",
+    bannerUrl:null, bannerGradient:"linear-gradient(135deg,#050a1a 0%,#0d0a28 45%,#1a0a2e 100%)", accentColor:"#818CF8",
+    description:"TechEra is thrilled to be the official Community Partner for the Hyperspace Innovation Hackathon 2K26, organized by TechNest at Inderprastha Engineering College (IPEC), Ghaziabad.\n\nTechNest officially partnered with TechEra to bring together the brightest minds for two power-packed days of hacking, building, and innovating.\n\nThe Hyperspace Innovation Hackathon brought together passionate developers, designers, and innovators for an intense and inspiring experience at IPEC.",
+    links:{website:"#",linkedin:"#",instagram:"#"},
+    agenda:[], organiserTeam:[], speakers:[],
+    sponsors:[{name:"TechNest",tagline:"Organized By",initials:"TN",accent:"#818CF8",linkedin:"#"}],
+    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF",linkedin:"#"}],
+    faqs:[
+      {q:"What was the Hyperspace Innovation Hackathon?",a:"A two-day offline hackathon organized by TechNest at Inderprastha Engineering College (IPEC), Ghaziabad, focused on innovation and real-world problem solving."},
+      {q:"What was TechEra's role?",a:"TechEra was the official Community Partner for Hyperspace Innovation Hackathon 2K26, supporting with community outreach and registrations."},
+    ],
+  },
+  {
+    id:10, name:"SHIFT2K25 Pre-Meetup", organizer:"BugBaar",
+    date:"20th December 2025", day:"Saturday", time:"TBA", mode:"Offline",
+    location:"OpsTree Global, Noida", attendees:"TBA", category:"Collaborations",
+    status:"expired", registerLink:"#",
+    bannerUrl:null, bannerGradient:"linear-gradient(135deg,#0a1a0a 0%,#0a2818 45%,#050d1a 100%)", accentColor:"#34D399",
+    description:"TechEra was proud to be a Community Partner for the SHIFT2K25 Pre-Meetup, organized by BugBaar at OpsTree Global, Noida.\n\nCalling all builders, founders, devs, designers & community leaders — this pre-meetup was packed with value. Expect insights, conversations, and real opportunities to collaborate.\n\nSHIFT2K25 brought together a diverse crowd of tech professionals and community builders for an evening of meaningful connections and high-energy discussions.",
+    links:{website:"#",linkedin:"#",instagram:"#"},
+    agenda:[], organiserTeam:[], speakers:[],
+    sponsors:[{name:"BugBaar",tagline:"Organized By",initials:"BB",accent:"#34D399",linkedin:"#"}],
+    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF",linkedin:"#"}],
+    faqs:[
+      {q:"What was the SHIFT2K25 Pre-Meetup?",a:"A pre-meetup organized by BugBaar at OpsTree Global, Noida, bringing together builders, founders, devs, and designers for insights, conversations, and collaboration opportunities."},
+      {q:"What was TechEra's role?",a:"TechEra served as the Community Partner for the SHIFT2K25 Pre-Meetup by BugBaar."},
+    ],
+  },
+  {
+    id:11, name:"AI Fusion 2025", organizer:"Tech4Hack",
+    date:"20th December 2025", day:"Saturday", time:"TBA", mode:"Offline",
+    location:"ThoughtWorks, Gurugram", attendees:"TBA", category:"Collaborations",
+    status:"expired", registerLink:"#",
+    bannerUrl:null, bannerGradient:"linear-gradient(135deg,#050d1a 0%,#0d1f3c 45%,#050d1a 100%)", accentColor:"#FEBC2E",
+    description:"TechEra was welcomed as the official Community Partner for AI Fusion 2025, organized by Tech4Hack at ThoughtWorks, Gurugram.\n\nCollaboration makes communities stronger — and AI Fusion 2025 was a testament to that. The event brought together AI enthusiasts, developers, and innovators under one roof for a day of learning, sharing, and building.\n\nTechEra was proud to support Tech4Hack in making AI Fusion 2025 an inclusive and impactful experience for the wider tech community.",
+    links:{website:"#",linkedin:"#",instagram:"#"},
+    agenda:[], organiserTeam:[], speakers:[],
+    sponsors:[{name:"Tech4Hack",tagline:"Organized By",initials:"TH",accent:"#FEBC2E",linkedin:"#"}],
+    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF",linkedin:"#"}],
+    faqs:[
+      {q:"What was AI Fusion 2025?",a:"AI Fusion 2025 was an offline AI-focused event organized by Tech4Hack at ThoughtWorks, Gurugram, bringing together AI enthusiasts and developers for a day of learning and collaboration."},
+      {q:"What was TechEra's role?",a:"TechEra was the Community Partner for AI Fusion 2025, contributing to community outreach and registrations."},
+    ],
+  },
+  {
+    id:12, name:"AI For All", organizer:"Tech4Hack",
+    date:"17th January 2026", day:"Saturday", time:"TBA", mode:"Offline",
+    location:"Microsoft Office, Gurugram", attendees:"TBA", category:"Collaborations",
+    status:"expired", registerLink:"#",
+    bannerUrl:null, bannerGradient:"linear-gradient(135deg,#050d1a 0%,#0a1a2e 45%,#050d1a 100%)", accentColor:"#38BDF8",
+    description:"TechEra Community was announced as the official Community Partner for AI For All, organized by Tech4Hack at Microsoft Office, Gurugram.\n\nTech4Hack's support in registrations and community outreach helped connect more students and tech enthusiasts across different colleges. With partners like TechEra, they are building a collaborative space for learning, innovation, and growth in Artificial Intelligence.\n\nAI For All was a landmark event in making AI education accessible and inclusive for everyone.",
+    links:{website:"#",linkedin:"#",instagram:"#"},
+    agenda:[], organiserTeam:[], speakers:[],
+    sponsors:[{name:"Tech4Hack",tagline:"Organized By",initials:"TH",accent:"#38BDF8",linkedin:"#"}],
+    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF",linkedin:"#"}],
+    faqs:[
+      {q:"What was AI For All?",a:"AI For All was an offline event organized by Tech4Hack at Microsoft Office, Gurugram, focused on making AI learning accessible and connecting students and tech enthusiasts from across colleges."},
+      {q:"What was TechEra's role?",a:"TechEra was the Community Partner for AI For All, supporting registrations and community outreach to connect more students with the event."},
+    ],
+  },
+  {
+    id:13, name:"DevAI-X", organizer:"TechTribe",
+    date:"21st February 2026", day:"Saturday", time:"TBA", mode:"Offline",
+    location:"Opstree Global, Noida", attendees:"TBA", category:"Collaborations",
+    status:"expired", registerLink:"#",
+    bannerUrl:null, bannerGradient:"linear-gradient(135deg,#0a0a1f 0%,#0d1a3c 45%,#050d1a 100%)", accentColor:"#A78BFA",
+    description:"TechEra is thrilled to join hands with TechTribe as Community Partner for DevAI-X — an event at the intersection of development and artificial intelligence, held at Opstree Global, Noida.\n\nTogether, TechTribe and TechEra are bringing developers, AI enthusiasts, and builders to one stage for a day of innovation, talks, and community energy.\n\nDevAI-X was a celebration of what happens when great communities collaborate — bigger ideas, stronger networks, and real impact.",
+    links:{website:"#",linkedin:"#",instagram:"#"},
+    agenda:[], organiserTeam:[], speakers:[],
+    sponsors:[{name:"TechTribe",tagline:"Organized By",initials:"TT",accent:"#A78BFA",linkedin:"#"}],
+    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF",linkedin:"#"}],
+    faqs:[
+      {q:"What was DevAI-X?",a:"DevAI-X was an offline event organized by TechTribe at Opstree Global, Noida, bringing together developers and AI enthusiasts for a day of innovation and community building."},
+      {q:"What was TechEra's role?",a:"TechEra was the official Community Partner for DevAI-X, presented by TechTribe."},
+    ],
+  },
+  {
+    id:14, name:"Frost Hack 2026", organizer:"Innovxus",
+    date:"March 2026", day:"TBA", time:"TBA", mode:"Hybrid",
+    location:"Jalandhar, Punjab", attendees:"TBA", category:"Collaborations",
+    status:"expired", registerLink:"#",
+    bannerUrl:null, bannerGradient:"linear-gradient(135deg,#050d1a 0%,#051a28 45%,#0a1a2e 100%)", accentColor:"#67E8F9",
+    description:"TechEra 🤝 Innovxus — stronger communities, bigger innovation.\n\nFrost Hack 2026, organized by Innovxus, is a two-round hackathon — starting with an online Round 1, leading to an exciting Grand Finale held offline in Jalandhar, Punjab.\n\nTechEra was proud to partner with Innovxus as Community Partner for Frost Hack 2026, supporting the event's mission to bring together the sharpest builders and innovators from across India.",
+    links:{website:"#",linkedin:"#",instagram:"#"},
+    agenda:[], organiserTeam:[], speakers:[],
+    sponsors:[{name:"Innovxus",tagline:"Organized By",initials:"IX",accent:"#67E8F9",linkedin:"#"}],
+    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF",linkedin:"#"}],
+    faqs:[
+      {q:"What is Frost Hack 2026?",a:"Frost Hack 2026 is a hybrid hackathon organized by Innovxus — with Round 1 held online and the Grand Finale offline in Jalandhar, Punjab."},
+      {q:"What was TechEra's role?",a:"TechEra was the Community Partner for Frost Hack 2026 by Innovxus."},
+    ],
+  },
+  {
+    id:15, name:"NERDZ'26", organizer:"NERDZ 2026",
+    date:"5–6 February 2026", day:"Thursday & Friday", time:"All Day", mode:"Offline",
+    location:"Jamia Hamdard University", attendees:"TBA", category:"Collaborations",
+    status:"expired", registerLink:"#",
+    bannerUrl:null, bannerGradient:"linear-gradient(135deg,#0a050d 0%,#1a0a28 45%,#0d050a 100%)", accentColor:"#F472B6",
+    description:"TechEra was the proud Community Partner for NERDZ'26, held at Jamia Hamdard University over two exciting days.\n\nNERDZ'26 gave a big shoutout to TechEra for the passion for innovation and learning that inspires everyone around. Together, we connect, innovate, and grow — proud to collaborate with minds that shape the future.\n\nThank you for building a strong, supportive tech community. NERDZ'26 was a celebration of curiosity, collaboration, and the next generation of tech leaders.",
+    links:{website:"#",linkedin:"#",instagram:"#"},
+    agenda:[], organiserTeam:[], speakers:[],
+    sponsors:[{name:"NERDZ 2026",tagline:"Organized By",initials:"NZ",accent:"#F472B6",linkedin:"#"}],
+    communityPartners:[{name:"TechEra",tagline:"Community Partner",initials:"TE",accent:"#00EEFF",linkedin:"#"}],
+    faqs:[
+      {q:"What was NERDZ'26?",a:"NERDZ'26 was a two-day offline tech event held at Jamia Hamdard University, celebrating innovation, learning, and community collaboration."},
+      {q:"What was TechEra's role?",a:"TechEra was the Community Partner for NERDZ'26, recognized for building a strong and supportive tech community."},
     ],
   },
 ];
@@ -638,20 +742,6 @@ const INVOLVEMENT_ROLES = [
 function GetInvolved() {
   return (
     <>
-      {/* <div className="gi-divider" />
-      <section className="gi-section">
-        <div className="gi-header">
-          <div className="gi-eyebrow">
-            <span style={{width:7,height:7,borderRadius:"50%",background:"#00EEFF",display:"inline-block",animation:"pulseGlow 2s ease-in-out infinite"}} />
-            GET INVOLVED
-          </div>
-          <h2 className="gi-title">Be part of something<br /><span className="shimmer-text">bigger than a ticket</span></h2>
-          <p className="gi-subtitle">Our events thrive because of sponsors, speakers, and volunteers. Pick your role and help us build the future of tech communities in India.</p>
-        </div>
-        <div className="gi-grid">
-          {INVOLVEMENT_ROLES.map((role,i)=><RoleCard key={role.id} role={role} index={i} />)}
-        </div>
-      </section> */}
     </>
   );
 }
@@ -718,6 +808,7 @@ function AnimatedCover({accentColor="#00EEFF",bannerUrl}) {
 
 function PersonCard({person}) {
   const [hov,setHov]=useState(false);
+  const hasLink = person.linkedin && person.linkedin !== "#";
   return (
     <div className="evd-person-card" onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}
       style={{borderColor:hov?`${person.accent}33`:"rgba(255,255,255,.05)",boxShadow:hov?`0 8px 28px ${person.accent}14`:"none"}}>
@@ -727,10 +818,14 @@ function PersonCard({person}) {
         <div className="evd-person-tagline">{person.tagline}</div>
         <div className="evd-person-socials">
           <a
-            href="#"
+            href={hasLink ? person.linkedin : undefined}
+            target={hasLink ? "_blank" : undefined}
+            rel="noreferrer"
             className="evd-soc"
             aria-label="LinkedIn"
+            style={{cursor: hasLink ? "pointer" : "default", opacity: hasLink ? 1 : 0.4}}
             onMouseEnter={e=>{
+              if(!hasLink) return;
               e.currentTarget.style.color=person.accent;
               e.currentTarget.style.borderColor=`${person.accent}40`;
             }}
@@ -1131,7 +1226,6 @@ function CollabCard({ev}) {
   const [hov,setHov]=useState(false);
   const modeC={"Offline":{c:"#4ADE80",bg:"rgba(74,222,128,.15)"},"Online":{c:"#00EEFF",bg:"rgba(0,238,255,.12)"},"Hybrid":{c:"#A78BFA",bg:"rgba(167,139,250,.13)"}}[ev.mode]||{c:"#4ADE80",bg:"rgba(74,222,128,.15)"};
   const acc = ev.accentColor || "#00EEFF";
-  const partners = (ev.sponsors||[]).filter(p=>p.name!=="TechEra");
 
   return (
     <div
@@ -1140,25 +1234,18 @@ function CollabCard({ev}) {
       onMouseLeave={()=>setHov(false)}
       style={{borderColor:hov?`${acc}40`:"rgba(255,255,255,.05)",boxShadow:hov?`0 20px 56px ${acc}18, 0 0 0 1px ${acc}18`:"none",transform:hov?"translateY(-6px)":"none",transition:"transform .35s cubic-bezier(.23,1,.32,1), border-color .35s, box-shadow .35s"}}
     >
-      {/* Banner — taller, shows all info */}
       <div className="ev-card-banner collab-banner-tall" style={{background:ev.bannerGradient,position:"relative"}}>
         <CollabBanner ev={ev} />
-        {/* Mode badge */}
         <div className="ev-card-mode-badge" style={{color:modeC.c,background:modeC.bg,border:`1px solid ${modeC.c}40`,backdropFilter:"blur(10px)"}}>{ev.mode}</div>
       </div>
 
-      {/* Card body — overview info */}
       <div className="ev-card-body">
-        {/* Org name */}
         <div className="ev-card-org" style={{color:acc}}>{ev.organizer}</div>
-        {/* Event name */}
         <div className="ev-card-name">{ev.name}</div>
-        {/* Date + location */}
         <div className="ev-card-meta">
           <div className="ev-card-meta-item"><CalIcon />{ev.date}</div>
           <div className="ev-card-meta-item"><LocIcon />{ev.location}</div>
         </div>
-        {/* Footer — mode tag only, no entry/fees */}
         <div className="ev-card-footer" style={{justifyContent:"flex-end"}}>
           <div style={{display:"flex",alignItems:"center",gap:6,padding:"4px 12px",borderRadius:999,border:`1px solid ${acc}30`,background:`${acc}0D`,fontSize:11,fontWeight:700,fontFamily:"Space Mono,monospace",color:acc,letterSpacing:".08em"}}>
             🤝 COMMUNITY PARTNER
@@ -1270,34 +1357,15 @@ function Footer() {
               {[
                 { Icon: LinkedInIcon, link: "https://www.linkedin.com/company/techeraa/" },
                 { Icon: InstaIcon, link: "https://www.instagram.com/tech__eraa?igsh=MXZuMmg2eXNhcG1jcg==" },
-                // { Icon: GitHubIcon, link: "https://github.com/TechEraCommunity" } // <-- change if different
               ].map(({Icon, link}, i)=>(
                 <a
                   key={i}
                   href={link}
                   target="_blank"
                   rel="noreferrer"
-                  style={{
-                    width:32,
-                    height:32,
-                    borderRadius:9,
-                    border:"1px solid rgba(255,255,255,.07)",
-                    background:"rgba(255,255,255,.03)",
-                    display:"flex",
-                    alignItems:"center",
-                    justifyContent:"center",
-                    color:"#475569",
-                    textDecoration:"none",
-                    transition:"color .2s,border-color .2s"
-                  }}
-                  onMouseEnter={e=>{
-                    e.currentTarget.style.color="#00EEFF";
-                    e.currentTarget.style.borderColor="rgba(0,238,255,.3)";
-                  }}
-                  onMouseLeave={e=>{
-                    e.currentTarget.style.color="#475569";
-                    e.currentTarget.style.borderColor="rgba(255,255,255,.07)";
-                  }}
+                  style={{width:32,height:32,borderRadius:9,border:"1px solid rgba(255,255,255,.07)",background:"rgba(255,255,255,.03)",display:"flex",alignItems:"center",justifyContent:"center",color:"#475569",textDecoration:"none",transition:"color .2s,border-color .2s"}}
+                  onMouseEnter={e=>{e.currentTarget.style.color="#00EEFF";e.currentTarget.style.borderColor="rgba(0,238,255,.3)";}}
+                  onMouseLeave={e=>{e.currentTarget.style.color="#475569";e.currentTarget.style.borderColor="rgba(255,255,255,.07)";}}
                 >
                   <Icon />
                 </a>
