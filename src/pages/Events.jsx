@@ -381,7 +381,7 @@ const INITIAL_EVENTS = [
       { time: "01:05 PM – 01:45 PM", title: "Fun Group Activity", type: "activity" },
       { time: "01:48 PM – 02:28 PM", title: "Key Speaker 2", type: "session" },
       { time: "02:31 PM – 02:46 PM", title: "Competition Segment", type: "competition" },
-      { time: "02:49 PM – 03:04 PM", title: "Pizza Sponsor", type: "sponsor" },
+      { time: "02:49 PM – 03:04 PM", title: "Upskilling Partner", type: "sponsor" },
       { time: "03:07 PM – 03:22 PM", title: "MetaSpace Address and Final Results", type: "closing" },
       { time: "03:22 PM – 03:30 PM", title: "Closing With Some Group Pictures", type: "closing" },
     ],
