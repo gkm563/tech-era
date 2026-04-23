@@ -1,84 +1,120 @@
-# 🏙️ UrbanFlow: Smart City Governance & Community Pulse
+# 🚀 TechEra: The Ultimate Tech Community Ecosystem
 
-**UrbanFlow** is a next-generation smart city ecosystem designed to bridge the gap between residents and city authorities. Built for high-efficiency governance and vibrant community engagement, UrbanFlow transforms civic management into a seamless, transparent, and interactive experience.
+[![Vite Build](https://img.shields.io/badge/Build-Vite_7-646CFF?logo=vite)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev/)
+[![Tailwind CSS 4](https://img.shields.io/badge/CSS-Tailwind_4-38B2AC?logo=tailwindcss)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![UrbanFlow Banner](https://tripcosmos.co/wp-content/uploads/2024/08/Kumbh-mela-prayagraj.jpg)
+**TechEra** is a premium, high-performance community platform designed for modern tech enthusiasts, developers, and innovators. Built with a focus on cutting-edge aesthetics and seamless user experience, it serves as the central hub for hackathons, meetups, workshops, and community resources.
 
-## 🚀 Key Modules
+---
 
-### 📡 UrbanPulse (UVoice)
-A real-time "City Pulse" communication engine inspired by modern social platforms. It serves as the digital town square for Prayagraj.
-- **URL-Driven Navigation**: Deep-linkable views for Home, Explore, Notifications, and Profiles.
-- **Smart Feeds**: Switch between "For You" (city-wide updates) and "Following" (curated community signals).
-- **Official Broadcasts**: Priority routing for verified Authority and Admin notices to ensure critical information reaches every resident.
-- **Interactive Signals**: Support for #hashtags, @mentions, rich media, and real-time community engagement (reposts, likes, bookmarks).
+## ✨ Key Features
 
-### 🛠️ Civic Engine
-A robust system for reporting and tracking urban infrastructure issues.
-- **Smart Reporting**: Geo-tagged issue reporting for potholes, streetlights, and sanitation.
-- **Real-time Status**: Live tracking of resolution progress from "Reported" to "Resolved".
-- **Authority Dashboard**: Specialized interfaces for city officials to manage workflows and allocate resources.
+- 🎭 **Ultra-Premium UI**: Modern dark-themed design with glassmorphism, glowing accents, and high-fidelity typography.
+- 🌊 **Smooth Interactions**: Integrated with **Lenis** for buttery-smooth inertial scrolling and **GSAP** for industry-standard animations.
+- 🎤 **Speaker & Sponsor Showcase**: Dedicated sections for thought leaders and strategic partners with interactive cards and marquees.
+- 📅 **Event Management**: Visual timeline and detailed pages for workshops, meetups, and conferences.
+- 📚 **Resource Hub**: A curated community knowledge base for roadmaps, cheat sheets, and toolkits.
+- 👥 **Team Portal**: Showcase of the visionaries and builders behind the ecosystem.
+- 📱 **Fully Responsive**: Optimized for everything from ultra-wide monitors to small mobile devices.
+- ⚡ **Built for Speed**: Powered by Vite 7 and React 19 for instantaneous load times and HMR.
 
-### 👥 Resident & Authority Portals
-Tailored experiences for different city roles:
-- **Admin/Authority**: Advanced analytics, insights, and official broadcast tools.
-- **Resident**: Personalized dashboard, bookmarked signals, and verified status management.
-- **Citizen**: Entry-level community participation tools.
+---
 
-## 🛠️ Technology Stack
+## 🛠️ Tech Stack
 
-- **Core**: [React.js](https://reactjs.org/) + [Vite](https://vitejs.dev/) for ultra-fast development and performance.
-- **Language**: [TypeScript](https://www.typescriptlang.org/) for robust, type-safe development.
-- **Styling**: Premium [Vanilla CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) + [TailwindCSS](https://tailwindcss.com/) for a sleek, modern aesthetic.
-- **Animations**: [Framer Motion](https://www.framer.com/motion/) for fluid, professional micro-interactions.
-- **Icons**: [Lucide React](https://lucide.dev/) for a consistent, high-fidelity icon system.
-- **State & Routing**: [React Router Dom](https://reactrouter.com/) for URL-synchronized application state.
+- **Core**: React 19 + Vite 7
+- **Styling**: Tailwind CSS 4 (Next-gen CSS engine)
+- **Animations**: 
+  - GSAP (ScrollTrigger & Timeline)
+  - Framer Motion (Micro-interactions)
+  - Lenis (Smooth Scroll)
+- **Icons**: Lucide React
+- **Deployment**: Vercel (CI/CD optimized)
 
-## 🏁 Getting Started
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v16.0 or higher)
+
+- Node.js (v18 or higher recommended)
 - npm or yarn
 
 ### Installation
 
-1. **Clone the repository**:
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-repo/UrbanFlow.git
-   cd UrbanFlow
+   git clone https://github.com/gkm563/tech-era.git
+   cd tech-era
    ```
 
-2. **Install dependencies**:
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Launch Development Server**:
+3. **Start the development server**
    ```bash
    npm run dev
    ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+---
 
 ## 📂 Project Structure
 
 ```text
 src/
-├── components/        # Reusable UI modules (UrbanPulse, Civic Dashboard, etc.)
-├── context/           # Application-wide state (Auth, Notifications)
-├── services/          # API integration (urbanAPI, streetGigAPI)
-├── lib/               # Utility functions and shared helpers
-├── App.tsx            # Main routing and portal architecture
-└── main.tsx           # Entry point
+├── components/        # Reusable UI components (Navbar, Footer, Hero, etc.)
+├── pages/             # Main application views (Home, Team, Events, etc.)
+├── data/              # Static data and configuration files
+├── assets/            # Global assets (styles, etc.)
+└── index.css          # Main stylesheet with Tailwind 4 configuration
+public/
+├── images/            # Event, Speaker, and Team photography
+└── logos/             # Sponsor and partner branding
 ```
-
-## 🌟 Recent Enhancements
-
-- **UVoice Overhaul**: Complete transformation into a high-fidelity social feed with tabbed sub-navigation.
-- **Smart Sidebar**: Real-time "What's happening" and "Who to follow" sections.
-- **Verified Status**: Implementation of verified phone number badges and role-based badging.
-- **Deep-Linking**: Full synchronization between application view-state and the browser URL.
 
 ---
 
-<div align="center">
-Built with ❤️ for the future of <b>Prayagraj</b>
-</div>
+## 🌐 Deployment
+
+The project is optimized for **Vercel**. Every push to the `main` or `feat/premium-revamp` branch triggers an automatic production build.
+
+**Custom Vercel Configuration**:
+The project includes a `vercel.json` to handle Single Page Application (SPA) routing, ensuring all navigation vectors point correctly to `index.html`.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions from the community!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## 📬 Contact
+
+- **Email**: [techeraa151@gmail.com](mailto:techeraa151@gmail.com)
+- **GitHub**: [@gkm563](https://github.com/gkm563)
+- **Instagram**: [@techera.community](https://instagram.com/techera.community)
+
+---
+*Built with ❤️ by the TechEra Core Team.*
