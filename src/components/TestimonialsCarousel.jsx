@@ -10,7 +10,7 @@ import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
   {
-    name: "Surya Chauhan",
+    name: "Biswamohan Singh",
     role: "Founding Engineer",
     text: "TechEra isn't just a community; it's an accelerator for ambition. The high-entropy environment pushed me to ship faster than I ever thought possible.",
     avatar: "/images/tech-colead.jpeg"

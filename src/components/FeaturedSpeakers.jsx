@@ -5,7 +5,7 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
 
 const speakers = [
   {
-    name: "Surya Chauhan",
+    name: "Biswamohan Singh",
     role: "Founder",
     company: "TechEra",
     image: "/images/founder-techera.jpg",
